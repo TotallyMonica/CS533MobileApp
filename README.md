@@ -1,5 +1,7 @@
 # CS533 Mobile App
 
+This is a Hotel Ecomerce App used to order materials. 
+
 ## Import into Android Studio instructions (Old UI, Version <2023.1)
 1. Open Android Studio
 2. Go to File -> New -> Project from Version Control
