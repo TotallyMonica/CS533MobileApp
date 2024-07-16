@@ -1,0 +1,23 @@
+flowchart TD
+  Start[App Opened]
+  
+  %% Mobile App Components
+  Start --> Login[Login Interface]
+  Login --> |Verify creds| DB[(Database)]
+  DB --> |Success| PC[Product Catalog]
+  DB --> |Failure| Error[Error message] --> Register[Registration Interface]
+  Register --> |Success| Login
+
+  PC --> PDetails[Product Details]
+  PDetails --> PName[Product Name]
+  PDetails --> Quantity[Stock]
+  PDetails --> Price[Price]
+  PDetails --> Description[Description]
+  PDetails --> AddToCart[Shopping Cart] --> Checkout[Checkout]
+  Checkout --> Payment[Payment Processing] --> |Success| OrderConfirm[Order Confirmation]
+  Payment --> |Failure| PaymentError[Payment Error]
+
+  %% Database Interaction
+  AddToCart --> DB
+  Checkout --> DB
+  Payment --> DB
