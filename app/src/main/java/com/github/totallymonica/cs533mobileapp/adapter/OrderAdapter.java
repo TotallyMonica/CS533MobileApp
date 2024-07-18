@@ -18,7 +18,7 @@ import java.util.List;
 
 /**
  * Grocery App
- * https://github.com/quintuslabs/GroceryStore
+ * https://github.com/TotallyMonica/CS533MobileApp
  * Created on 18-Feb-2019.
  * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
  */
