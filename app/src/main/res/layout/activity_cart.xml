@@ -15,40 +15,6 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/bg_3" />
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/bg_2" />
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/bg_1" />
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/graphe" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#D3FFFFFF" />
 
@@ -81,7 +47,8 @@
             android:layout_alignParentBottom="true"
             android:elevation="20dp"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -94,9 +61,9 @@
                 <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewMeriendaRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Total : "
+                    android:text="@string/total"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:visibility="gone" />
 
@@ -104,9 +71,9 @@
                     android:id="@+id/total_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$12"
+                    android:text="@string/_12"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -123,9 +90,9 @@
                 <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewMeriendaRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Checkout "
+                    android:text="@string/checkout"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -142,7 +109,8 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="@drawable/empty_cart_img"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:contentDescription="@string/todo" />
 
 
 </RelativeLayout>

@@ -35,4 +35,17 @@
     <string name="submit">SUBMIT</string>
     <string name="back">BACK</string>
     <string name="action_Cart">Cart</string>
+    <string name="banglore">Banglore</string>
+    <string name="mobile">Mobile :</string>
+    <string name="santosh_kumar_dash">Santosh Kumar Dash</string>
+    <string name="santoshnet2016_gmail_com">santoshnet2016@gmail.com</string>
+    <string name="address">Address :</string>
+    <string name="_9778178337">9778178337</string>
+    <string name="emailProfile">Email :</string>
+    <string name="name">Name :</string>
+    <string name="let_s_shopping">Let\'s Shopping</string>
+    <string name="total">Total :</string>
+    <string name="_12">$12</string>
+    <string name="todo">TODO</string>
+    <string name="checkout">Checkout</string>
 </resources>

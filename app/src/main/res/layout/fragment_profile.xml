@@ -12,40 +12,6 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/bg_3" />
-
-        <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/bg_2" />
-
-        <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/bg_1" />
-
-        <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/graphe" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#D9FFFFFF">
 
@@ -58,7 +24,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -83,13 +49,13 @@
                     <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansBold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Name :" />
+                        android:text="@string/name" />
 
                     <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansRegular
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Santosh Kumar Dash" />
+                        android:layout_marginStart="10dp"
+                        android:text="@string/santosh_kumar_dash" />
                 </LinearLayout>
 
                 <View
@@ -106,13 +72,13 @@
                     <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansBold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Email :" />
+                        android:text="@string/emailProfile" />
 
                     <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansRegular
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="santoshnet2016@gmail.com" />
+                        android:layout_marginStart="10dp"
+                        android:text="@string/santoshnet2016_gmail_com" />
                 </LinearLayout>
 
                 <View
@@ -129,13 +95,13 @@
                     <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansBold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mobile :" />
+                        android:text="@string/mobile" />
 
                     <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansRegular
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="9778178337" />
+                        android:layout_marginStart="10dp"
+                        android:text="@string/_9778178337" />
                 </LinearLayout>
 
                 <View
@@ -152,13 +118,13 @@
                     <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansBold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Address :" />
+                        android:text="@string/address" />
 
                     <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansRegular
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Banglore" />
+                        android:layout_marginStart="10dp"
+                        android:text="@string/banglore" />
                 </LinearLayout>
 
                 <View
