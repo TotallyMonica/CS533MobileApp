@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.fragment;
+package com.github.totallymonica.cs533mobileapp.fragment;
 
 
 import android.os.Bundle;
@@ -15,8 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.activity.BaseActivity;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.activity.BaseActivity;
 /**
  * Grocery App
  * https://github.com/quintuslabs/GroceryStore

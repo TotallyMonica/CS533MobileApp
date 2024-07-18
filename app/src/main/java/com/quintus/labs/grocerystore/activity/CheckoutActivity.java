@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.activity;
+package com.github.totallymonica.cs533mobileapp.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -14,8 +14,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.fragment.AddressFragment;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.fragment.AddressFragment;
 
 /**
  * Grocery App

@@ -80,12 +80,12 @@
                     android:layout_margin="10dp"
                     android:orientation="horizontal">
 
-                    <com.quintus.labs.grocerystore.customfonts.MyTextViewSansBold
+                    <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansBold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Name :" />
 
-                    <com.quintus.labs.grocerystore.customfonts.MyTextViewSansRegular
+                    <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansRegular
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -103,12 +103,12 @@
                     android:layout_margin="10dp"
                     android:orientation="horizontal">
 
-                    <com.quintus.labs.grocerystore.customfonts.MyTextViewSansBold
+                    <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansBold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Email :" />
 
-                    <com.quintus.labs.grocerystore.customfonts.MyTextViewSansRegular
+                    <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansRegular
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -126,12 +126,12 @@
                     android:layout_margin="10dp"
                     android:orientation="horizontal">
 
-                    <com.quintus.labs.grocerystore.customfonts.MyTextViewSansBold
+                    <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansBold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Mobile :" />
 
-                    <com.quintus.labs.grocerystore.customfonts.MyTextViewSansRegular
+                    <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansRegular
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -149,12 +149,12 @@
                     android:layout_margin="10dp"
                     android:orientation="horizontal">
 
-                    <com.quintus.labs.grocerystore.customfonts.MyTextViewSansBold
+                    <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansBold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Address :" />
 
-                    <com.quintus.labs.grocerystore.customfonts.MyTextViewSansRegular
+                    <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewSansRegular
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"

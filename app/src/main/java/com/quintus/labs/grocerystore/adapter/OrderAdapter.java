@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.adapter;
+package com.github.totallymonica.cs533mobileapp.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,9 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.model.Order;
-import com.quintus.labs.grocerystore.util.localstorage.LocalStorage;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.model.Order;
+import com.github.totallymonica.cs533mobileapp.util.localstorage.LocalStorage;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.activity;
+package com.github.totallymonica.cs533mobileapp.activity;
 
 
 import android.os.Bundle;
@@ -9,9 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.fragment.Login_Fragment;
-import com.quintus.labs.grocerystore.util.Utils;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.fragment.Login_Fragment;
+import com.github.totallymonica.cs533mobileapp.util.Utils;
 
 /**
  * Grocery App

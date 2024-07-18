@@ -1,8 +1,8 @@
-package com.quintus.labs.grocerystore.helper;
+package com.github.totallymonica.cs533mobileapp.helper;
 
-import com.quintus.labs.grocerystore.model.Category;
-import com.quintus.labs.grocerystore.model.Offer;
-import com.quintus.labs.grocerystore.model.Product;
+import com.github.totallymonica.cs533mobileapp.model.Category;
+import com.github.totallymonica.cs533mobileapp.model.Offer;
+import com.github.totallymonica.cs533mobileapp.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;

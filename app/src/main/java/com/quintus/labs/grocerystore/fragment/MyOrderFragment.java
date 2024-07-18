@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.fragment;
+package com.github.totallymonica.cs533mobileapp.fragment;
 
 
 import android.os.Bundle;
@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.activity.BaseActivity;
-import com.quintus.labs.grocerystore.adapter.OrderAdapter;
-import com.quintus.labs.grocerystore.model.Order;
-import com.quintus.labs.grocerystore.util.localstorage.LocalStorage;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.activity.BaseActivity;
+import com.github.totallymonica.cs533mobileapp.adapter.OrderAdapter;
+import com.github.totallymonica.cs533mobileapp.model.Order;
+import com.github.totallymonica.cs533mobileapp.util.localstorage.LocalStorage;
 
 import java.util.ArrayList;
 import java.util.List;

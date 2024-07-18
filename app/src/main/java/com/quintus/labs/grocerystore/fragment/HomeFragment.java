@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.fragment;
+package com.github.totallymonica.cs533mobileapp.fragment;
 
 
 import android.content.Intent;
@@ -18,14 +18,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.activity.MainActivity;
-import com.quintus.labs.grocerystore.adapter.CategoryAdapter;
-import com.quintus.labs.grocerystore.adapter.HomeSliderAdapter;
-import com.quintus.labs.grocerystore.adapter.NewProductAdapter;
-import com.quintus.labs.grocerystore.adapter.PopularProductAdapter;
-import com.quintus.labs.grocerystore.helper.Data;
-import com.quintus.labs.grocerystore.model.Category;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.activity.MainActivity;
+import com.github.totallymonica.cs533mobileapp.adapter.CategoryAdapter;
+import com.github.totallymonica.cs533mobileapp.adapter.HomeSliderAdapter;
+import com.github.totallymonica.cs533mobileapp.adapter.NewProductAdapter;
+import com.github.totallymonica.cs533mobileapp.adapter.PopularProductAdapter;
+import com.github.totallymonica.cs533mobileapp.helper.Data;
+import com.github.totallymonica.cs533mobileapp.model.Category;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -31,7 +31,7 @@
             android:adjustViewBounds="true"
             android:background="@drawable/no_orders" />
 
-        <com.quintus.labs.grocerystore.customfonts.MyTextViewMeriendaRegular
+        <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewMeriendaRegular
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

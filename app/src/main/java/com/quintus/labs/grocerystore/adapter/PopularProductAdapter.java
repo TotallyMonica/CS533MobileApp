@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.adapter;
+package com.github.totallymonica.cs533mobileapp.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,14 +16,14 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.activity.BaseActivity;
-import com.quintus.labs.grocerystore.activity.MainActivity;
-import com.quintus.labs.grocerystore.activity.ProductViewActivity;
-import com.quintus.labs.grocerystore.interfaces.AddorRemoveCallbacks;
-import com.quintus.labs.grocerystore.model.Cart;
-import com.quintus.labs.grocerystore.model.Product;
-import com.quintus.labs.grocerystore.util.localstorage.LocalStorage;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.activity.BaseActivity;
+import com.github.totallymonica.cs533mobileapp.activity.MainActivity;
+import com.github.totallymonica.cs533mobileapp.activity.ProductViewActivity;
+import com.github.totallymonica.cs533mobileapp.interfaces.AddorRemoveCallbacks;
+import com.github.totallymonica.cs533mobileapp.model.Cart;
+import com.github.totallymonica.cs533mobileapp.model.Product;
+import com.github.totallymonica.cs533mobileapp.util.localstorage.LocalStorage;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 

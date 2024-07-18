@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.adapter;
+package com.github.totallymonica.cs533mobileapp.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,9 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.activity.ProductActivity;
-import com.quintus.labs.grocerystore.model.Category;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.activity.ProductActivity;
+import com.github.totallymonica.cs533mobileapp.model.Category;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 

@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.util;
+package com.github.totallymonica.cs533mobileapp.util;
 
 
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.quintus.labs.grocerystore.R;
+import com.github.totallymonica.cs533mobileapp.R;
 
 /**
  * Grocery App

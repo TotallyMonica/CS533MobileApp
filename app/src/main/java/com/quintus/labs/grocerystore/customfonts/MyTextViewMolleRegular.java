@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.customfonts;
+package com.github.totallymonica.cs533mobileapp.customfonts;
 
 import android.content.Context;
 import android.graphics.Typeface;

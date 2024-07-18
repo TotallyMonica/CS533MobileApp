@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.fragment;
+package com.github.totallymonica.cs533mobileapp.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
@@ -14,10 +14,10 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.activity.LoginRegisterActivity;
-import com.quintus.labs.grocerystore.util.CustomToast;
-import com.quintus.labs.grocerystore.util.Utils;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.activity.LoginRegisterActivity;
+import com.github.totallymonica.cs533mobileapp.util.CustomToast;
+import com.github.totallymonica.cs533mobileapp.util.Utils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

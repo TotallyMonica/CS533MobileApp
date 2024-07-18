@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.fragment;
+package com.github.totallymonica.cs533mobileapp.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -19,13 +19,13 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.google.gson.Gson;
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.activity.LoginRegisterActivity;
-import com.quintus.labs.grocerystore.activity.MainActivity;
-import com.quintus.labs.grocerystore.model.User;
-import com.quintus.labs.grocerystore.util.CustomToast;
-import com.quintus.labs.grocerystore.util.Utils;
-import com.quintus.labs.grocerystore.util.localstorage.LocalStorage;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.activity.LoginRegisterActivity;
+import com.github.totallymonica.cs533mobileapp.activity.MainActivity;
+import com.github.totallymonica.cs533mobileapp.model.User;
+import com.github.totallymonica.cs533mobileapp.util.CustomToast;
+import com.github.totallymonica.cs533mobileapp.util.Utils;
+import com.github.totallymonica.cs533mobileapp.util.localstorage.LocalStorage;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

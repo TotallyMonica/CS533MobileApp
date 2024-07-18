@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore;
+package com.github.totallymonica.cs533mobileapp;
 
 import org.junit.Test;
 

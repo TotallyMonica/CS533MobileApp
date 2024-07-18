@@ -27,7 +27,7 @@
             android:src="@drawable/logo" />
     </androidx.cardview.widget.CardView>
 
-    <com.quintus.labs.grocerystore.customfonts.MyTextViewOleoScriptBold
+    <com.github.totallymonica.cs533mobileapp.customfonts.MyTextViewOleoScriptBold
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -170,7 +170,7 @@
         android:textSize="17sp"
         android:textStyle="bold" />
 
-    <com.quintus.labs.grocerystore.customfonts.MyTextView
+    <com.github.totallymonica.cs533mobileapp.customfonts.MyTextView
         android:id="@+id/already_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

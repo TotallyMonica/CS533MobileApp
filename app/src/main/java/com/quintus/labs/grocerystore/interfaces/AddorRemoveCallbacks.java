@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.interfaces;
+package com.github.totallymonica.cs533mobileapp.interfaces;
 
 
 /**

@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.activity;
+package com.github.totallymonica.cs533mobileapp.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -24,17 +24,17 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.fragment.CategoryFragment;
-import com.quintus.labs.grocerystore.fragment.HomeFragment;
-import com.quintus.labs.grocerystore.fragment.MyOrderFragment;
-import com.quintus.labs.grocerystore.fragment.NewProductFragment;
-import com.quintus.labs.grocerystore.fragment.OffrersFragment;
-import com.quintus.labs.grocerystore.fragment.PopularProductFragment;
-import com.quintus.labs.grocerystore.fragment.ProfileFragment;
-import com.quintus.labs.grocerystore.helper.Converter;
-import com.quintus.labs.grocerystore.model.User;
-import com.quintus.labs.grocerystore.util.localstorage.LocalStorage;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.fragment.CategoryFragment;
+import com.github.totallymonica.cs533mobileapp.fragment.HomeFragment;
+import com.github.totallymonica.cs533mobileapp.fragment.MyOrderFragment;
+import com.github.totallymonica.cs533mobileapp.fragment.NewProductFragment;
+import com.github.totallymonica.cs533mobileapp.fragment.OffrersFragment;
+import com.github.totallymonica.cs533mobileapp.fragment.PopularProductFragment;
+import com.github.totallymonica.cs533mobileapp.fragment.ProfileFragment;
+import com.github.totallymonica.cs533mobileapp.helper.Converter;
+import com.github.totallymonica.cs533mobileapp.model.User;
+import com.github.totallymonica.cs533mobileapp.util.localstorage.LocalStorage;
 
 import java.util.ArrayList;
 

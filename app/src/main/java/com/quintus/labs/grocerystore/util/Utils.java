@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.util;
+package com.github.totallymonica.cs533mobileapp.util;
 
 /**
  * Grocery App

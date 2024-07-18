@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.activity;
+package com.github.totallymonica.cs533mobileapp.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -22,10 +22,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.adapter.CartAdapter;
-import com.quintus.labs.grocerystore.model.Cart;
-import com.quintus.labs.grocerystore.util.localstorage.LocalStorage;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.adapter.CartAdapter;
+import com.github.totallymonica.cs533mobileapp.model.Cart;
+import com.github.totallymonica.cs533mobileapp.util.localstorage.LocalStorage;
 
 import java.util.ArrayList;
 import java.util.List;

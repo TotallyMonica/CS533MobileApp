@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.adapter;
+package com.github.totallymonica.cs533mobileapp.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.quintus.labs.grocerystore.R;
+import com.github.totallymonica.cs533mobileapp.R;
 
 /**
  * Grocery App

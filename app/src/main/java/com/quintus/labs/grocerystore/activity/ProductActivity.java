@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.activity;
+package com.github.totallymonica.cs533mobileapp.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -20,10 +20,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.adapter.ProductAdapter;
-import com.quintus.labs.grocerystore.helper.Converter;
-import com.quintus.labs.grocerystore.helper.Data;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.adapter.ProductAdapter;
+import com.github.totallymonica.cs533mobileapp.helper.Converter;
+import com.github.totallymonica.cs533mobileapp.helper.Data;
 
 /**
  * Grocery App

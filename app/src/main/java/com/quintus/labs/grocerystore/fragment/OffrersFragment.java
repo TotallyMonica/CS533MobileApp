@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.fragment;
+package com.github.totallymonica.cs533mobileapp.fragment;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.adapter.OfferAdapter;
-import com.quintus.labs.grocerystore.helper.Data;
-import com.quintus.labs.grocerystore.model.Offer;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.adapter.OfferAdapter;
+import com.github.totallymonica.cs533mobileapp.helper.Data;
+import com.github.totallymonica.cs533mobileapp.model.Offer;
 
 import java.util.ArrayList;
 import java.util.List;

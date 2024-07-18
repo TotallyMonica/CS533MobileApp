@@ -1,4 +1,4 @@
-package com.quintus.labs.grocerystore.activity;
+package com.github.totallymonica.cs533mobileapp.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -19,9 +19,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 
-import com.quintus.labs.grocerystore.R;
-import com.quintus.labs.grocerystore.helper.Converter;
-import com.quintus.labs.grocerystore.model.Cart;
+import com.github.totallymonica.cs533mobileapp.R;
+import com.github.totallymonica.cs533mobileapp.helper.Converter;
+import com.github.totallymonica.cs533mobileapp.model.Cart;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
