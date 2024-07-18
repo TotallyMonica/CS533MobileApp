@@ -17,7 +17,7 @@ import com.github.totallymonica.cs533mobileapp.util.localstorage.LocalStorage;
 import java.util.List;
 
 /**
- * Grocery App
+ * CS533 Mobile App
  * https://github.com/TotallyMonica/CS533MobileApp
  * Created on 18-Feb-2019.
  * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
