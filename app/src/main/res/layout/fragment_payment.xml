@@ -136,7 +136,7 @@
                     android:visibility="visible">
 
 
-                    <LinearLayout
+                    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
@@ -460,7 +460,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="41dp"
-                            android:background="@drawable/button_gradient_bg"
+                            android:background="@drawable/bg_pay"
                             android:gravity="center"
                             android:orientation="horizontal"
                             android:padding="14dp">
@@ -474,7 +474,7 @@
                                 android:gravity="center"
                                 android:paddingLeft="6dp"
                                 android:paddingRight="6dp"
-                                android:text="CONFIRM AND PAY"
+                                android:text="CONFIRM AND PAY $"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/text" />
                         </LinearLayout>

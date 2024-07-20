@@ -126,7 +126,7 @@ public class ConfirmFragment extends Fragment {
         }, 3000); // 5000 milliseconds
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         String currentDateandTime = sdf.format(new Date());
-        Order order = new Order(id, orderNo, currentDateandTime, "Rs. " + _totalAmount, "Pending");
+        Order order = new Order(id, orderNo, currentDateandTime, "$" + _totalAmount, "Pending");
         orderList.add(order);
         String orderString = gson.toJson(orderList);
         localStorage.setOrder(orderString);

@@ -67,7 +67,7 @@ public class CartActivity extends BaseActivity {
         emptyCart = findViewById(R.id.empty_cart_img);
         checkoutLL = findViewById(R.id.checkout_LL);
         totalPrice = findViewById(R.id.total_price);
-        totalPrice.setText("Rs. " + getTotalPrice() + "");
+        totalPrice.setText("$" + getTotalPrice() + "");
         setUpCartRecyclerview();
 
 
@@ -197,7 +197,7 @@ public class CartActivity extends BaseActivity {
     @Override
     public void updateTotalPrice() {
 
-        totalPrice.setText("Rs. " + getTotalPrice() + "");
+        totalPrice.setText("$" + getTotalPrice() + "");
         if (getTotalPrice() == 0.0) {
             mState = "HIDE_MENU";
             invalidateOptionsMenu();
