@@ -65,7 +65,7 @@ public class CheckoutActivity extends BaseActivity {
 
         // Set the text color of TextView to red
         // This line change the ActionBar title text color
-        tv.setTextColor(getResources().getColor(R.color.buttonTxt));
+        tv.setTextColor(getResources().getColor(R.color.primary_text));
 
         // Set the ActionBar display option
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
