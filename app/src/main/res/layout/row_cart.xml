@@ -162,7 +162,7 @@
                             android:lines="2"
                             android:maxLines="2"
                             android:text="Food"
-                            android:textColor="@color/colorAccent"
+                            android:textColor="@color/primary_text"
                             android:textSize="18dp" />
 
                         <TextView

@@ -6,15 +6,25 @@
    * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
    -->
 <resources>
+    <color name="colorBackground">#d2d2d2</color>
+    <color name="toolBarMain">#000000</color>
+    <color name="toolBarAccent">#999999</color>
+    <color name="buttonColor">#414141</color>
+    <color name="buttomSymbol">#f3f3f3</color>
+    <color name="buttonTxt">#f3f3f3</color>
+    <color name="productView">#e8e8e8</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="borderColor">#EAEAEA</color>
+    <color name="colorAccent">#000000</color>
+    <color name="colorPrimaryDark">#f3f3f3</color>
+
     <color name="colorPrimary">#FA5258</color>
-    <color name="colorPrimaryDark">#FAD23C</color>
-    <color name="colorAccent">#ff009688</color>
+
+
     <color name="red_400">#FC5952</color>
     <color name="yellow_400">#E8CA54</color>
     <color name="white">#FFFFFF</color>
-    <color name="borderColor">#EAEAEA</color>
-    <color name="primary_text">#212121</color>
-    <color name="secondary_text">#727272</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
     <color name="window_background">#FFF5F5F5</color>

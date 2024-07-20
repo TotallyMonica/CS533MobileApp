@@ -40,7 +40,7 @@
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/login"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/primary_text"
             android:textSize="35sp"
             android:textStyle="bold" />
 
@@ -68,7 +68,7 @@
         <View
             android:layout_width="fill_parent"
             android:layout_height="2px"
-            android:background="@color/colorPrimaryDark" />
+            android:background="@android:color/black" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -88,14 +88,14 @@
                 android:padding="10dp"
                 android:singleLine="true"
                 android:textColor="@color/black"
-                android:textColorHint="@color/yellow"
+                android:textColorHint="@android:color/black"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="2px"
-            android:background="@color/colorPrimaryDark" />
+            android:background="@android:color/black" />
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -131,7 +131,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
-            android:background="@drawable/loginbutton_selector"
+            android:background="@drawable/button_gradient_bg"
             android:padding="3dp"
             android:text="@string/login"
             android:textColor="@color/white"

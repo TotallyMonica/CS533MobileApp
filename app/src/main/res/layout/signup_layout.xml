@@ -33,7 +33,7 @@
         android:gravity="center"
         android:padding="5dp"
         android:text="@string/signUp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/primary_text"
         android:textSize="35sp"
         android:textStyle="bold" />
 
@@ -63,7 +63,7 @@
     <View
         android:layout_width="fill_parent"
         android:layout_height="2px"
-        android:background="@color/yellow" />
+        android:background="@android:color/black" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -90,7 +90,7 @@
     <View
         android:layout_width="fill_parent"
         android:layout_height="2px"
-        android:background="@color/yellow" />
+        android:background="@android:color/black" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -119,7 +119,7 @@
     <View
         android:layout_width="fill_parent"
         android:layout_height="2px"
-        android:background="@color/yellow" />
+        android:background="@android:color/black" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -147,7 +147,7 @@
     <View
         android:layout_width="fill_parent"
         android:layout_height="2px"
-        android:background="@color/yellow" />
+        android:background="@android:color/black" />
 
     <CheckBox
         android:id="@+id/terms_conditions"
@@ -179,7 +179,7 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/already_user"
-        android:textColor="@color/yellow"
+        android:textColor="@color/primary_text"
         android:textSize="15sp" />
 
 </LinearLayout>

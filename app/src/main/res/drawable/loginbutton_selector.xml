@@ -6,7 +6,7 @@
         <shape android:shape="rectangle">
             <corners android:radius="3dp" />
 
-            <solid android:color="@color/colorPrimary" />
+            <solid android:color="@color/buttonColor" />
         </shape>
     </item>
 
@@ -15,7 +15,7 @@
         <shape android:shape="rectangle">
             <corners android:radius="3dp" />
 
-            <solid android:color="@color/colorPrimary" />
+            <solid android:color="@color/buttonColor" />
         </shape>
     </item>
 

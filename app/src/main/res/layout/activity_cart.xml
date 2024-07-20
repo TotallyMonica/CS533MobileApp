@@ -9,7 +9,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroungColor"
+    android:background="@color/primary_text"
     tools:context=".activity.CartActivity">
 
 
@@ -45,10 +45,10 @@
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:layout_alignParentBottom="true"
+            android:baselineAligned="false"
             android:elevation="20dp"
             android:orientation="horizontal"
-            android:weightSum="2"
-            android:baselineAligned="false">
+            android:weightSum="2">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -72,7 +72,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/_12"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/primary_text"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -82,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/colorPrimary"
+                android:background="@color/buttonColor"
                 android:gravity="center"
                 android:onClick="onCheckoutClicked"
                 android:orientation="horizontal">
@@ -91,7 +91,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/checkout"
-                    android:textColor="@color/white"
+                    android:textColor="@color/buttonTxt"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -109,8 +109,8 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="@drawable/empty_cart_img"
-        android:visibility="gone"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo"
+        android:visibility="gone" />
 
 
 </RelativeLayout>

@@ -381,7 +381,7 @@
                         android:layout_height="50dp"
                         android:layout_alignParentBottom="true"
                         android:layout_marginTop="@dimen/margin_20dp"
-                        android:background="@color/colorPrimary"
+                        android:background="@color/buttonColor"
                         android:elevation="5dp"
                         android:gravity="center"
                         android:text="Save"

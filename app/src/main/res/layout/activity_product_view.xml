@@ -52,7 +52,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:background="@drawable/rect"
+                        android:background="@color/buttonColor"
                         android:paddingLeft="@dimen/margin_10dp"
                         android:paddingTop="@dimen/margin_5dp"
                         android:paddingRight="10dp"
@@ -134,10 +134,10 @@
                         android:id="@+id/free"
                         android:layout_width="110dp"
                         android:layout_height="28dp"
-                        android:background="@drawable/rect"
+                        android:background="@color/buttonColor"
                         android:gravity="center"
                         android:text="Free Shipping"
-                        android:textColor="#fff"
+                        android:textColor="@color/buttonTxt"
 
                         />
 
@@ -440,7 +440,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="Add to cart"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/primary_text"
                             android:textSize="12dp" />
 
                     </LinearLayout>
@@ -510,11 +510,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
+        android:background="@color/buttonColor"
         android:gravity="center"
         android:padding="16dp"
         android:text="BUY IT NOW"
-        android:textColor="#fff"
+        android:textColor="@color/buttonTxt"
         android:textSize="16dp" />
 </RelativeLayout>
 
