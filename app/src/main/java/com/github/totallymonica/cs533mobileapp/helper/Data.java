@@ -21,18 +21,15 @@ public class Data {
     List<Offer> offerList = new ArrayList<>();
 
     public List<Category> getCategoryList() {
-        Category category = new Category("1", "Food", "https://image.flaticon.com/icons/png/512/262/262344.png");
-        categoryList.add(category);
-        category = new Category("2", "Home & Cleaning", "https://lisasnatural.com/wp-content/uploads/2018/05/housecleanicon-300x228.jpg");
-        categoryList.add(category);
-        category = new Category("3", "Baby Care", "https://tips4tots.files.wordpress.com/2015/08/medical-insurance-free-icon.png");
-        categoryList.add(category);
-        category = new Category("4", "sports & Nutrition", "https://kathleenhalme.com/images/nutrition-clipart-sport.jpg");
-        categoryList.add(category);
-        category = new Category("5", "Pet care", "http://kasperstromman.files.wordpress.com/2013/05/dog-cat-above-board.jpg");
-        categoryList.add(category);
-        category = new Category("6", "Health & Household", "https://thumbs.dreamstime.com/b/household-cleaning-products-accessories-basket-there-mop-detergents-rubber-gloves-glass-cleaner-sponges-89944820.jpg");
-        categoryList.add(category);
+        categoryList.clear();
+
+        categoryList.add(new Category("1", "Food", "https://www.mashed.com/img/gallery/the-truth-about-hotel-breakfast-buffets/l-intro-1609346085.jpg"));
+        categoryList.add(new Category("2", "Linens", "http://www.hotel-linen-supplier.com/wp-content/uploads/2019/06/Hotel-linen2.jpg")); // Use drawable prefix for local resources
+        categoryList.add(new Category("3", "Cleaning Supplies", "https://www.thespruce.com/thmb/8K778grvhfBTNdRUZ41VnoEEVlw=/4000x2265/filters:fill(auto,1)/DirtyMopandBucket-5c5f326fc9e77c000166214f.jpg"));
+        categoryList.add(new Category("4", "Room Amenities", "https://cpimg.tistatic.com/03123971/b/4/Hotel-Amenities.jpg"));
+        categoryList.add(new Category("5", "Toiletries", "https://media.timeout.com/images/105719103/image.jpg"));
+        categoryList.add(new Category("6", "Event Supplies", "https://images.rosewoodhotels.com/is/image/rwhg/pavilion-010-1"));
+
         return categoryList;
     }
 

@@ -43,7 +43,7 @@
                     <com.github.totallymonica.cs533mobileapp.customfonts.MyTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Adderss"
+                        android:text="Address"
                         android:textColor="@color/text_color"
                         android:textSize="14dp" />
                 </LinearLayout>

@@ -29,7 +29,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         fragmentManager = getSupportFragmentManager();
 
-        // If savedinstnacestate is null then replace login fragment
+        // If saved instance state is null then replace login fragment
         if (savedInstanceState == null) {
             fragmentManager
                     .beginTransaction()

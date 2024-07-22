@@ -17,7 +17,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="email">Email Id</string>
-    <string name="passowrd">Password</string>
+    <string name="password">Password</string>
     <string name="login">LOGIN</string>
     <string name="show_pwd">Show Password</string>
     <string name="hide_pwd">Hide Password</string>
@@ -37,8 +37,8 @@
     <string name="action_Cart">Cart</string>
     <string name="banglore">Banglore</string>
     <string name="mobile">Mobile :</string>
-    <string name="santosh_kumar_dash">Santosh Kumar Dash</string>
-    <string name="santoshnet2016_gmail_com">santoshnet2016@gmail.com</string>
+    <string name="Test_dash"> Test User</string>
+    <string name="Test_gmail_com">Testuser@gmail.com</string>
     <string name="address">Address :</string>
     <string name="_9778178337">9778178337</string>
     <string name="emailProfile">Email :</string>

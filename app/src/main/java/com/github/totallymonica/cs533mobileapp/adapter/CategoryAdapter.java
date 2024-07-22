@@ -66,20 +66,36 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
         Category category = categoryList.get(position);
         holder.title.setText(category.getTitle());
-        if (Tag.equalsIgnoreCase("Category")) {
-            Picasso.get()
-                    .load(category.getImage())
-                    .into(holder.imageView, new Callback() {
-                        @Override
-                        public void onSuccess() {
-                            holder.progressBar.setVisibility(View.GONE);
-                        }
 
-                        @Override
-                        public void onError(Exception e) {
-                            Log.d("Error : ", e.getMessage());
-                        }
-                    });
+        if (Tag.equalsIgnoreCase("Category")) {
+            String image = category.getImage();
+            if (image.startsWith("drawable/")) {
+                // Check if the image string starts with "drawable/" indicating a local resource
+                // Extract the drawable resource name and get the resource ID
+                String resourceName = image.replace("drawable/", "");
+                int resId = holder.itemView.getContext().getResources().getIdentifier(resourceName, "drawable", holder.itemView.getContext().getPackageName());
+                if (resId != 0) {
+                    holder.imageView.setImageResource(resId);
+                    holder.progressBar.setVisibility(View.GONE);
+                } else {
+                    Log.d("Error : ", "Drawable resource not found: " + resourceName);
+                }
+            } else {
+                // Use Picasso for URL-based images
+                Picasso.get()
+                        .load(image)
+                        .into(holder.imageView, new Callback() {
+                            @Override
+                            public void onSuccess() {
+                                holder.progressBar.setVisibility(View.GONE);
+                            }
+
+                            @Override
+                            public void onError(Exception e) {
+                                Log.d("Error : ", e.getMessage());
+                            }
+                        });
+            }
         }
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +115,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
                 context.startActivity(intent);
             }
         });
-
     }
 
     @Override
@@ -111,7 +126,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         } else {
             return categoryList.size();
         }
-
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
