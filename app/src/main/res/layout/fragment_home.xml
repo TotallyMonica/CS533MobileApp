@@ -28,7 +28,6 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="170dp">
@@ -100,6 +99,7 @@
 
                 </LinearLayout>
 
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -133,9 +133,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/new_product_rv"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                    </androidx.recyclerview.widget.RecyclerView>
+                        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -158,6 +156,7 @@
 
                 </LinearLayout>
 
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="120dp">
@@ -178,6 +177,7 @@
 
                     </androidx.cardview.widget.CardView>
                 </RelativeLayout>
+
             </LinearLayout>
         </RelativeLayout>
 

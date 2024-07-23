@@ -27,7 +27,7 @@ import com.github.totallymonica.cs533mobileapp.helper.Data;
 public class NewProductFragment extends Fragment {
     RecyclerView nRecyclerView;
     Data data;
-    private NewProductAdapter pAdapter;
+    private NewProductAdapter nAdapter;
 
     public NewProductFragment() {
         // Required empty public constructor
@@ -41,11 +41,11 @@ public class NewProductFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_new, container, false);
         data = new Data();
         nRecyclerView = view.findViewById(R.id.new_product_rv);
-        pAdapter = new NewProductAdapter(data.getNewList(), getContext(), "new");
-        RecyclerView.LayoutManager pLayoutManager = new LinearLayoutManager(getContext());
-        nRecyclerView.setLayoutManager(pLayoutManager);
+        nAdapter = new NewProductAdapter(data.getNewList(), getContext(), "new");
+        RecyclerView.LayoutManager nLayoutManager = new LinearLayoutManager(getContext());
+        nRecyclerView.setLayoutManager(nLayoutManager);
         nRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        nRecyclerView.setAdapter(pAdapter);
+        nRecyclerView.setAdapter(nAdapter);
 
 
         return view;
@@ -55,6 +55,6 @@ public class NewProductFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle("New");
+        getActivity().setTitle("New Products");
     }
 }

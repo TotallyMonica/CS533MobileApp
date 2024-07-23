@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -59,33 +60,36 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.MyViewHolder
         Picasso.get().load(offer.getImage()).error(R.drawable.no_image).into(holder.imageView, new Callback() {
             @Override
             public void onSuccess() {
+
                 holder.progressBar.setVisibility(View.GONE);
             }
 
             @Override
             public void onError(Exception e) {
-
+                holder.progressBar.setVisibility(View.GONE);
+                holder.imageView.setImageResource(R.drawable.no_image);
             }
         });
+        holder.description.setText(offer.getDescription());
     }
 
     @Override
     public int getItemCount() {
-
         return offerList.size();
-
 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         ProgressBar progressBar;
+        TextView description;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.offer_image);
             progressBar = itemView.findViewById(R.id.progressbar);
+            description = itemView.findViewById(R.id.offer_description);
 
         }
     }

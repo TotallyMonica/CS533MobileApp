@@ -38,7 +38,7 @@ public class Data {
 
         //Food Category (ID: 1)
         productList.add(new Product("1", "1", "Pancake Mix", "", "50 Lbs", "$", "80", "0", "https://images.heb.com/is/image/HEBGrocery/001857413"));
-        productList.add(new Product("2", "1", "Coffee", "", "20 Lbs", "$", "100", "10% OFF", "https://cdnimg.webstaurantstore.com/images/products/extra_large/45595/637734.jpg" ));
+        productList.add(new Product("2", "1", "Coffee", "", "20 Lbs", "$", "100", "10% OFF", "https://cdnimg.webstaurantstore.com/images/products/extra_large/45595/637734.jpg"));
         productList.add(new Product("3", "1", "Tea Bags", "", "1000 Count", "$", "80", "5% OFF", "https://specialteacompany.com/wp-content/uploads/2013/11/p-12014-Woven-Tea-Bags.jpg"));
         productList.add(new Product("4", "1", "Sugar", "", "100 Lbs", "$", "50", "0", "https://www.bakingbusiness.com/ext/resources/2021/9/SugarBagsTrio_Lead.jpg?height=635&t=1631299050&width=1200"));
         productList.add(new Product("10", "1", "Breakfast Cereals", "", "20 boxes", "$", "90", "10% OFF", "https://media4.popsugar-assets.com/files/2016/02/22/834/n/1922398/10b0a4ff59945843_feb_22_cereal.xxxlarge_2x.jpg"));
@@ -78,53 +78,36 @@ public class Data {
     }
 
     public List<Product> getNewList() {
-        Product product = new Product("1", "1", "Apple", "", "1 Kg", "$", "20", "10% OFF", "https://storage.googleapis.com/zopnow-static/images/products/320/fresh-apple-red-delicious-v-500-g.png");
-        newList.add(product);
-        product = new Product("2", "1", "Banana", "", "1 Bounch", "$", "10", "20% OFF", "https://images-na.ssl-images-amazon.com/images/I/21DejQuoT2L.jpg");
-        newList.add(product);
-        product = new Product("3", "2", "House Clean Liquid", "", "1 Lit.", "$", "25", "", "http://sunsetcleaningcia.com/wp-content/uploads/2016/05/houseclean.png");
-        newList.add(product);
-        product = new Product("4", "2", "House Clean Brush", "", "1 Piece", "$", "10", "", "https://www.clean-hoouse.com/wp-content/uploads/2017/09/13.png");
-        newList.add(product);
-        product = new Product("5", "3", "Pampers", "", "1 Piece", "20", "$", "10% OFF", "https://cdn.bmstores.co.uk/images/hpcProductImage/imgFull/311448-Pampers-Baby-Dry-Size-4-Maxi-251.jpg");
-        newList.add(product);
+        newList.clear();
+
+        newList.add(new Product("10", "1", "Breakfast Cereals", "", "20 boxes", "$", "90", "10% OFF", "https://media4.popsugar-assets.com/files/2016/02/22/834/n/1922398/10b0a4ff59945843_feb_22_cereal.xxxlarge_2x.jpg"));
+        newList.add(new Product("11", "2", "Bath Towels", "", "100 count", "$", "300", "10% OFF", "https://i5.walmartimages.com/asr/7959ea91-d71f-45a1-a10c-5e477c9341f5_1.e02d2dd0e42d33e156c96ef3aa883c74.jpeg"));
+        newList.add(new Product("16", "3", "Laundry Detergent", "", "50 Lbs", "$", "100", "5% OFF", "https://midwestdetergents.com/wp-content/uploads/2022/07/Midwest-Detergents-Bulk-Green-Laundry-Detergent.jpg"));
+        newList.add(new Product("24", "4", "Soap Bars", "", "500 count", "$", "150", "10% OFF", "https://cdnimg.webstaurantstore.com/images/products/medium/445153/1651690.jpg"));
+        newList.add(new Product("28", "5", "Shaving kit", "", "100 bottles", "$", "150", "10% OFF", "https://static.wixstatic.com/media/c456ed_0579ae0d65754e35807dc88ee24dd476~mv2_d_1440_1438_s_2.jpg/v1/fill/w_996,h_996,al_c,q_85,usm_0.66_1.00_0.01/c456ed_0579ae0d65754e35807dc88ee24dd476~mv2_d_1440_1438_s_2.jpg"));
+        newList.add(new Product("35", "6", "Drink Glasses", "", "1000 count", "$", "150", "20% OFF", "https://i.pinimg.com/originals/fc/fa/88/fcfa8825cf19432f771dfeedf4ef1902.jpg"));
+
         return newList;
     }
 
     public List<Product> getPopularList() {
-        Product product = new Product("6", "3", "Baby Oil", "", "500 Ml", "$", "31", "", "https://www.fortunaonline.net/media/catalog/product/cache/1/small_image/295x/040ec09b1e35df139433887a97daa66f/n/k/nkbcp12_-_xia-shib-ao-baby-oil-200ml.png");
-        popularList.add(product);
-        product = new Product("7", "4", "Apple", "", "1 Kg", "$", "20", "", "https://storage.googleapis.com/zopnow-static/images/products/320/fresh-apple-red-delicious-v-500-g.png");
-        popularList.add(product);
-        product = new Product("8", "4", "Apple", "", "1 Kg", "$", "20", "", "https://storage.googleapis.com/zopnow-static/images/products/320/fresh-apple-red-delicious-v-500-g.png");
-        popularList.add(product);
-        product = new Product("9", "5", "Apple", "", "1 Kg", "$", "20", "", "https://storage.googleapis.com/zopnow-static/images/products/320/fresh-apple-red-delicious-v-500-g.png");
-        popularList.add(product);
-        product = new Product("10", "5", "Apple", "", "1 Kg", "$", "20", "", "https://storage.googleapis.com/zopnow-static/images/products/320/fresh-apple-red-delicious-v-500-g.png");
-        popularList.add(product);
-        product = new Product("11", "6", "Apple", "", "1 Kg", "$", "20", "", "https://storage.googleapis.com/zopnow-static/images/products/320/fresh-apple-red-delicious-v-500-g.png");
-        popularList.add(product);
-        product = new Product("12", "6", "Apple", "", "1 Kg", "$", "20", "", "https://storage.googleapis.com/zopnow-static/images/products/320/fresh-apple-red-delicious-v-500-g.png");
-        popularList.add(product);
-        product = new Product("13", "1", "Litche", "", "1 Kg", "$", "20", "30%OFF", "https://cdn.shopify.com/s/files/1/0665/4989/products/lichee-485x400_grande.jpg");
-        popularList.add(product);
+        popularList.clear();
+
+        popularList.add(new Product("1", "1", "Pancake Mix", "", "50 Lbs", "$", "80", "0", "https://images.heb.com/is/image/HEBGrocery/001857413"));
+        popularList.add(new Product("2", "1", "Coffee", "", "20 Lbs", "$", "100", "10% OFF", "https://cdnimg.webstaurantstore.com/images/products/extra_large/45595/637734.jpg"));
+        popularList.add(new Product("21", "4", "Shampoo", "", "100 bottles", "$", "200", "0", "https://cdnimg.webstaurantstore.com/images/products/xxl/536762/2105024.jpg"));
+        popularList.add(new Product("22", "4", "Conditioner", "", "100 bottles", "$", "200", "0", "https://image.made-in-china.com/2f0j00lYMbSVitbCcP/Private-Label-Cosmetics-Hair-Care-Coconut-Oil100-Organic-Deep-Repair-Sulfate-Free-Bulk-Hair-Conditioner-for-All-Hair-Types.jpg"));
+        popularList.add(new Product("33", "6", "Napkins", "", "1000 count", "$", "300", "0", "https://image.dhgate.com/0x0s/f2-albu-g8-M01-D8-8B-rBVaVFyGObqAIOlmAAHkviXrIVs576.jpg/5-colors-napkin-wholesale-50-70cm-cotton.jpg"));
+
         return popularList;
     }
 
     public List<Offer> getOfferList() {
-        Offer offer = new Offer("http://1.bp.blogspot.com/-MMt-60IWEdw/VqZsh45Dv8I/AAAAAAAAMHg/70D9tVowlyc/s1600/askmegrocery-republic-day-offer.jpg");
-        offerList.add(offer);
-        offer = new Offer("http://www.lootkaro.com/wp-content/uploads/2016/05/as1.jpg");
-        offerList.add(offer);
-        offer = new Offer("https://453xbcknr3t3ahr522mms518-wpengine.netdna-ssl.com/wp-content/themes/iga-west/images/banner-save-more.jpg");
-        offerList.add(offer);
-        offer = new Offer("https://images-eu.ssl-images-amazon.com/images/G/31/img16/Grocery/SVD/July18/750x375.png");
-        offerList.add(offer);
-        offer = new Offer("https://images-eu.ssl-images-amazon.com/images/G/31/img16/Grocery/BreakfastStore/kmande_2018-06-15T12-00_f010a5_1121973_grocery_750x375.jpg");
-        offerList.add(offer);
-        offer = new Offer("http://www.enjoygrocery.com/images/enjoygrocery-offer.jpg");
-        offerList.add(offer);
+        offerList.clear();
 
+        offerList.add(new Offer("https://cdnimg.webstaurantstore.com/images/products/extra_large/45595/637734.jpg", "10% OFF on bulk coffee orders"));
+        offerList.add(new Offer("https://www.webstaurantstore.com/images/products/extra_large/162908/1127156.jpg", "15% OFF on disinfectant wipes"));
+        offerList.add(new Offer("https://media4.popsugar-assets.com/files/2016/02/22/834/n/1922398/10b0a4ff59945843_feb_22_cereal.xxxlarge_2x.jpg", "5% OFF on breakfast cereals"));
 
         return offerList;
     }
