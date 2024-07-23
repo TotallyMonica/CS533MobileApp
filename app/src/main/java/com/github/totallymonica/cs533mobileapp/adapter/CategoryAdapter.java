@@ -64,7 +64,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
 
-        Category category = categoryList.get(position);
+        final Category category = categoryList.get(position);
         holder.title.setText(category.getTitle());
 
         if (Tag.equalsIgnoreCase("Category")) {
@@ -78,10 +78,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
                     holder.imageView.setImageResource(resId);
                     holder.progressBar.setVisibility(View.GONE);
                 } else {
-                    Log.d("Error : ", "Drawable resource not found: " + resourceName);
+                    Log.d("CategoryAdapter", "Drawable resource not found: " + resourceName);
                 }
             } else {
-                // Use Picasso for URL-based images
                 Picasso.get()
                         .load(image)
                         .into(holder.imageView, new Callback() {
@@ -92,29 +91,25 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
                             @Override
                             public void onError(Exception e) {
-                                Log.d("Error : ", e.getMessage());
+                                Log.d("CategoryAdapter", "Error loading image: " + e.getMessage());
                             }
                         });
             }
         }
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ProductActivity.class);
+                intent.putExtra("CATEGORY_ID", category.getId());
+                intent.putExtra("CATEGORY_TITLE", category.getTitle());
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 context.startActivity(intent);
             }
-        });
+        };
 
-        holder.title.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, ProductActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                context.startActivity(intent);
-            }
-        });
+        holder.cardView.setOnClickListener(listener);
+        holder.title.setOnClickListener(listener);
     }
 
     @Override

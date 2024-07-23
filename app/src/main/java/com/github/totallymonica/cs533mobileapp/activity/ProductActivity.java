@@ -24,6 +24,10 @@ import com.github.totallymonica.cs533mobileapp.R;
 import com.github.totallymonica.cs533mobileapp.adapter.ProductAdapter;
 import com.github.totallymonica.cs533mobileapp.helper.Converter;
 import com.github.totallymonica.cs533mobileapp.helper.Data;
+import com.github.totallymonica.cs533mobileapp.model.Product;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * CS533 Mobile App
@@ -37,6 +41,8 @@ public class ProductActivity extends BaseActivity {
     ProductAdapter mAdapter;
     String Tag = "List";
     private RecyclerView recyclerView;
+    private String categoryId;
+    private String categoryTitle;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -50,6 +56,10 @@ public class ProductActivity extends BaseActivity {
         final Drawable upArrow = getResources().getDrawable(R.drawable.ic_arrow_back_black_24dp);
         //upArrow.setColorFilter(Color.parseColor("#FFFFFF"), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
+
+        categoryId = getIntent().getStringExtra("CATEGORY_ID");
+        categoryTitle = getIntent().getStringExtra("CATEGORY_TITLE");
+        setTitle(categoryTitle);
 
         cart_count = cartCount();
         recyclerView = findViewById(R.id.product_rv);
@@ -83,24 +93,33 @@ public class ProductActivity extends BaseActivity {
     }
 
     private void setUpRecyclerView() {
-        data = new Data();
-        mAdapter = new ProductAdapter(data.getProductList(), ProductActivity.this, Tag);
+        List<Product> filteredProductList = filterProductsByCategory(data.getProductList());
+        mAdapter = new ProductAdapter(filteredProductList, this, Tag);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
-
     }
 
     private void setUpGridRecyclerView() {
-        data = new Data();
-        mAdapter = new ProductAdapter(data.getProductList(), ProductActivity.this, Tag);
+        List<Product> filteredProductList = filterProductsByCategory(data.getProductList());
+        mAdapter = new ProductAdapter(filteredProductList, this, Tag);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
-
     }
+
+    private List<Product> filterProductsByCategory(List<Product> productList){
+        List<Product> filteredProductList = new ArrayList<>();
+        for (Product product : productList) {
+            if (product.getCategoryId().equals(categoryId)) {
+                filteredProductList.add(product);
+            }
+        }
+        return filteredProductList;
+    }
+
 
     public void onToggleClicked(View view) {
         if (Tag.equalsIgnoreCase("List")) {
@@ -117,8 +136,6 @@ public class ProductActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                // todo: goto back activity from here
-
                 Intent intent = new Intent(ProductActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
