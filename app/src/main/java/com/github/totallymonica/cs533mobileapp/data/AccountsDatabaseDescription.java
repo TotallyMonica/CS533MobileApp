@@ -18,10 +18,10 @@ public class AccountsDatabaseDescription {
         // Column names for the table
         public static final String COLUMN_NAME_USERNAME = "username";
         public static final String COLUMN_NAME_PASSWORD = "passwd";
-        public static final String COLUMN_NAME_FIRST_NAME = "fname";
-        public static final String COLUMN_NAME_LAST_NAME = "lname";
+        public static final String COLUMN_NAME_NAME = "name";
         public static final String COLUMN_NAME_EMAIL = "email";
         public static final String COLUMN_NAME_PHONE = "phone";
+        public static final String COLUMN_NAME_ADDRESS = "address";
 
         public static Uri buildUserUri(long id) {
             return ContentUris.withAppendedId(CONTENT_URI, id);

@@ -1,8 +1,16 @@
 package com.github.totallymonica.cs533mobileapp.util.localstorage;
 
+import android.content.ContentProvider;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.UriMatcher;
+import android.database.Cursor;
+import android.net.Uri;
+import android.util.Log;
+
+import com.github.totallymonica.cs533mobileapp.data.AccountsContentProvider;
+import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseDescription.User;
 
 /**
  * CS533 Mobile App
@@ -57,8 +65,18 @@ public class LocalStorage {
         editor.commit();
     }
 
+    // Function of interest - Gets email/id/mobile/name/password
     public String getUserLogin() {
-        return sharedPreferences.getString(KEY_USER, "");
+        ContentProvider creds = new AccountsContentProvider();
+        Uri queryUri = User.CONTENT_URI;
+        UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
+        try {
+            Cursor cursor = creds.query(queryUri, new String[]{ User.COLUMN_NAME_EMAIL, User._ID, User.COLUMN_NAME_PHONE, User.COLUMN_NAME_NAME, User.COLUMN_NAME_PASSWORD }, "", new String[]{""}, "");
+        } catch (Exception e) {
+            Log.println(0, "", e.toString());
+        }
+        String user = sharedPreferences.getString(KEY_USER, "");
+        return user;
     }
 
 
@@ -79,8 +97,11 @@ public class LocalStorage {
     }
 
     public String getUserAddress() {
-        if (sharedPreferences.contains(KEY_USER_ADDRESS))
+        boolean hasUserAddress = sharedPreferences.contains(KEY_USER_ADDRESS);
+        if (sharedPreferences.contains(KEY_USER_ADDRESS)) {
+            String userAddress = sharedPreferences.getString(KEY_USER_ADDRESS, null);;
             return sharedPreferences.getString(KEY_USER_ADDRESS, null);
+        }
         else return null;
     }
 
@@ -92,8 +113,10 @@ public class LocalStorage {
     }
 
     public String getCart() {
-        if (sharedPreferences.contains("CART"))
+        if (sharedPreferences.contains("CART")) {
+            String cartContents = sharedPreferences.getString("CART", null);
             return sharedPreferences.getString("CART", null);
+        }
         else return null;
     }
 
@@ -112,8 +135,10 @@ public class LocalStorage {
 
 
     public String getOrder() {
-        if (sharedPreferences.contains("ORDER"))
+        if (sharedPreferences.contains("ORDER")) {
+            String order = sharedPreferences.getString("ORDER", null);
             return sharedPreferences.getString("ORDER", null);
+        }
         else return null;
     }
 

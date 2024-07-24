@@ -15,9 +15,12 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseHelper;
+import com.github.totallymonica.cs533mobileapp.data.UserInfo;
 import com.google.gson.Gson;
 import com.github.totallymonica.cs533mobileapp.R;
 import com.github.totallymonica.cs533mobileapp.activity.LoginRegisterActivity;
@@ -68,7 +71,6 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
         mobileNumber = view.findViewById(R.id.mobileNumber);
 
         password = view.findViewById(R.id.password);
-
         signUpButton = view.findViewById(R.id.signUpBtn);
         login = view.findViewById(R.id.already_user);
         terms_conditions = view.findViewById(R.id.terms_conditions);
@@ -145,10 +147,10 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
                     "Accept Term & Conditions");
         } else {
             user = new User("1", getFullName, getEmailId, getMobileNumber, getPassword);
-            gson = new Gson();
-            String userString = gson.toJson(user);
-            localStorage = new LocalStorage(getContext());
-            localStorage.createUserLoginSession(userString);
+            UserInfo newUser = new UserInfo(getFullName, getPassword, getFullName, "", getMobileNumber, getEmailId);
+            AccountsDatabaseHelper dbHelper = new AccountsDatabaseHelper(getContext());
+            dbHelper.addOne(newUser);
+
             progressDialog.setMessage("Registering Data....");
             progressDialog.show();
             Handler mHand = new Handler();
@@ -163,6 +165,5 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
                 }
             }, 5000);
         }
-
     }
 }
