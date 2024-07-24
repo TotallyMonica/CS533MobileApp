@@ -44,6 +44,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         localStorage = new LocalStorage(getApplicationContext());
+        boolean loggedIn = localStorage.isUserLoggedIn();
         if (localStorage.isUserLoggedIn()) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
