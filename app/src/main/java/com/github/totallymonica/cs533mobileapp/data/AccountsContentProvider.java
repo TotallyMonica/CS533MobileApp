@@ -46,8 +46,10 @@ public class AccountsContentProvider extends ContentProvider {
                 throw new UnsupportedOperationException(getContext().getString(R.string.invalid_query_uri) + uri);
         }
 
+        // Execute query to one or more users
         Cursor cursor = queryBuilder.query(dbHelper.getReadableDatabase(), projection, selection, selectionArgs, null, null, sortOrder);
 
+        // Check for content changes
         cursor.setNotificationUri(getContext().getContentResolver(), uri);
         return cursor;
     }
@@ -59,28 +61,68 @@ public class AccountsContentProvider extends ContentProvider {
 
     @Override
     public Uri insert(Uri uri, ContentValues values) {
-        Uri newUserUri = null;
+        Uri newUserUri;
 
         switch (uriMatcher.match(uri)) {
             case ONE_USER:
-                long rowId = dbHelper.getWritableDatabase().insert(
-                        User.TABLE_NAME, null, values);
+                long rowId = dbHelper.getWritableDatabase().insert(User.TABLE_NAME, null, values);
 
-                if (rowId > 0) {
+                if (rowId > 0) { // SQLite IDs begin at 1, anything less than that is invalid
                     newUserUri = User.buildUserUri(rowId);
+                    getContext().getContentResolver().notifyChange(uri, null);
                 }
+                else
+                    throw new SQLException(getContext().getString(R.string.insert_failed) + uri);
+
+                break;
+            default:
+                throw new UnsupportedOperationException(getContext().getString(R.string.invalid_insert_uri) + uri);
         }
 
         return newUserUri;
     }
 
     @Override
-    public int delete(Uri uri, String s, String[] strings) {
-        return 0;
+    public int delete(Uri uri, String selection, String[] selectionArgs) {
+        int deletedRowsCount;
+
+        switch (uriMatcher.match(uri)) {
+            case ONE_USER:
+                String id = uri.getLastPathSegment();
+
+                deletedRowsCount = dbHelper.getWritableDatabase().delete(User.TABLE_NAME, User._ID + "=" + id, selectionArgs);
+                break;
+            default:
+                throw new UnsupportedOperationException(getContext().getString(R.string.invalid_delete_uri) + uri);
+        }
+
+        // Notify observers that data changed.
+        if (deletedRowsCount != 0) {
+            getContext().getContentResolver().notifyChange(uri, null);
+        }
+
+        return deletedRowsCount;
     }
 
     @Override
-    public int update(Uri uri, ContentValues contentValues, String s, String[] strings) {
-        return 0;
+    public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
+        int updatedRowsCount;
+
+        switch (uriMatcher.match(uri)) {
+            case ONE_USER:
+                String id = uri.getLastPathSegment();
+
+                updatedRowsCount = dbHelper.getWritableDatabase().update(User.TABLE_NAME, values, User._ID + "=" + id, selectionArgs);
+                break;
+            default:
+                throw new UnsupportedOperationException(getContext().getString(R.string.invalid_update_uri) + uri);
+        }
+
+        // Notify observers that data changed.
+        if (updatedRowsCount != 0) {
+            getContext().getContentResolver().notifyChange(uri, null);
+        }
+
+        return updatedRowsCount;
     }
 }
