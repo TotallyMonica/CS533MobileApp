@@ -113,8 +113,9 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
 
         // Query DB for the json relevant to our ID
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT " + UserAccount.COLUMN_NAME_JSON + " FROM " + UserAccount.TABLE_NAME +
-                            " WHERE '" + UserAccount._ID + "'='" + targetId + "';", null);
+        String query = "SELECT " + UserAccount.COLUMN_NAME_JSON + " FROM " + UserAccount.TABLE_NAME +
+                " WHERE " + UserAccount._ID + "=" + targetId + ";";
+        Cursor cursor = db.rawQuery(query, null);
 
         // Grab the JSON data and return it if we have it
         if (cursor.moveToFirst()) {
