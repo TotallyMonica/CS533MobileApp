@@ -220,7 +220,8 @@ public class Login_Fragment extends Fragment implements OnClickListener {
                 @Override
                 public void run() {
                     if (user != null) {
-                        if (!user.getEmail().equalsIgnoreCase(getEmailId) || !user.getPassword().equalsIgnoreCase(getPassword)) {
+                        if ( user.getEmail() == null || user.getPassword() == null ||
+                                !user.getEmail().equalsIgnoreCase(getEmailId) || !user.getPassword().equalsIgnoreCase(getPassword)) {
                             new CustomToast().Show_Toast(getActivity(), view,
                                     "Please Check Email or Password");
                         } else {
