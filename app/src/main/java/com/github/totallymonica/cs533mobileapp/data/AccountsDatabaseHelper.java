@@ -36,7 +36,7 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public long getId(User user) {
+    public int getId(User user) {
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -49,7 +49,7 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
                 null);
 
         if (cursor.moveToFirst()) {
-            return cursor.getLong(0);
+            return cursor.getInt(0);
         } else {
             return -1;
         }
@@ -85,10 +85,10 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
 
         // Account was created successfully, save it so that we can log in with it
         if (insert != -1) {
-            long userId = getId(user);
+            int userId = getId(user);
             editor = sharedPreferences.edit();
             editor.putBoolean("LoggedIn", true);
-            editor.putLong(UserAccount._ID, userId);
+            editor.putInt(UserAccount._ID, userId);
             editor.putString(UserAccount.COLUMN_NAME_EMAIL, user.getEmail());
             editor.commit();
         }
@@ -103,7 +103,7 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
 
     public String getUser() {
         // Get our ID from sharedPreferences
-        long targetId = sharedPreferences.getLong(UserAccount._ID, -1);
+        int targetId = sharedPreferences.getInt(UserAccount._ID, -1);
 
         // In the event that we don't have an ID stored, just break out immediately.
         // Probably should be null but hey compatibility or whatever
