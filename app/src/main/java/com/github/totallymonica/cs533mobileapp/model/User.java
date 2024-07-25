@@ -7,7 +7,6 @@ package com.github.totallymonica.cs533mobileapp.model;
  * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
  */
 public class User {
-    String id;
     String name;
     String email;
     String mobile;
@@ -16,20 +15,11 @@ public class User {
     public User() {
     }
 
-    public User(String id, String name, String email, String mobile, String password) {
-        this.id = id;
+    public User(String name, String email, String mobile, String password) {
         this.name = name;
         this.email = email;
         this.mobile = mobile;
         this.password = password;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -63,6 +53,4 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 }

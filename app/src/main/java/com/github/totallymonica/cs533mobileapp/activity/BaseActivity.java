@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseHelper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.github.totallymonica.cs533mobileapp.interfaces.AddorRemoveCallbacks;
@@ -31,6 +32,7 @@ import java.util.List;
 
 public class BaseActivity extends AppCompatActivity implements AddorRemoveCallbacks {
     public static final String TAG = "BaseActivity===>";
+    private AccountsDatabaseHelper dbHelper = new AccountsDatabaseHelper(BaseActivity.this);
     private static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 10;
     private static final int MY_PERMISSIONS_REQUEST_CAMERA = 20;
     List<Cart> cartList = new ArrayList<Cart>();
@@ -43,10 +45,9 @@ public class BaseActivity extends AppCompatActivity implements AddorRemoveCallba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         localStorage = new LocalStorage(getApplicationContext());
         gson = new Gson();
-        userJson = localStorage.getUserLogin();
+        userJson = dbHelper.getUser();
         progressDialog = new ProgressDialog(BaseActivity.this);
         //user = gson.fromJson(userJson, UserResult.class);
         //  NetworkCheck.isNetworkAvailable(getApplicationContext());

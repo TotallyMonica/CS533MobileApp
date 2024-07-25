@@ -20,6 +20,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -48,6 +49,7 @@ public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private static int cart_count = 0;
     User user;
+    AccountsDatabaseHelper dbHelper;
 
     @SuppressLint("ResourceAsColor")
     static void centerToolbarTitle(@NonNull final Toolbar toolbar) {
@@ -135,9 +137,8 @@ public class MainActivity extends BaseActivity
 
 
         localStorage = new LocalStorage(getApplicationContext());
-        String userString = localStorage.getUserLogin();
+        String userString = dbHelper.getUser();
         Gson gson = new Gson();
-        userString = localStorage.getUserLogin();
         user = gson.fromJson(userString, User.class);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -158,7 +159,7 @@ public class MainActivity extends BaseActivity
         nav_footer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                localStorage.logoutUser();
+                AccountsDatabaseHelper.logout();
                 startActivity(new Intent(getApplicationContext(), LoginRegisterActivity.class));
                 finish();
                 overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);

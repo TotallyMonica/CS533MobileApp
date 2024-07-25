@@ -15,12 +15,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseHelper;
-import com.github.totallymonica.cs533mobileapp.data.UserInfo;
 import com.google.gson.Gson;
 import com.github.totallymonica.cs533mobileapp.R;
 import com.github.totallymonica.cs533mobileapp.activity.LoginRegisterActivity;
@@ -146,10 +144,9 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
             new CustomToast().Show_Toast(getActivity(), view,
                     "Accept Term & Conditions");
         } else {
-            user = new User("1", getFullName, getEmailId, getMobileNumber, getPassword);
-            UserInfo newUser = new UserInfo(getFullName, getPassword, getFullName, "", getMobileNumber, getEmailId);
+            user = new User(getFullName, getEmailId, getMobileNumber, getPassword);
             AccountsDatabaseHelper dbHelper = new AccountsDatabaseHelper(getContext());
-            dbHelper.addOne(newUser);
+            dbHelper.addOne(user);
 
             progressDialog.setMessage("Registering Data....");
             progressDialog.show();

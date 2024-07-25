@@ -7,40 +7,41 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseDescription.User;
+import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseDescription.UserAccount;
+import com.github.totallymonica.cs533mobileapp.model.User;
 
 public class AccountsDatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "users.db";
     private static final String SQL_CREATE_ENTRIES =
-            "CREATE TABLE " + User.TABLE_NAME +
-                    " (" + User._ID + " INTEGER PRIMARY KEY," +
-                    User.COLUMN_NAME_USERNAME + " TEXT," +
-                    User.COLUMN_NAME_PASSWORD + " TEXT," +
-                    User.COLUMN_NAME_NAME + " TEXT," +
-                    User.COLUMN_NAME_EMAIL + " TEXT," +
-                    User.COLUMN_NAME_PHONE + " TEXT," +
-                    User.COLUMN_NAME_ADDRESS + " TEXT)";
+            "CREATE TABLE " + UserAccount.TABLE_NAME +
+                    " (" + UserAccount._ID + " INTEGER PRIMARY KEY," +
+                    UserAccount.COLUMN_NAME_PASSWORD + " TEXT," +
+                    UserAccount.COLUMN_NAME_NAME + " TEXT," +
+                    UserAccount.COLUMN_NAME_EMAIL + " TEXT," +
+                    UserAccount.COLUMN_NAME_PHONE + " TEXT," +
+                    UserAccount.COLUMN_NAME_ADDRESS + " TEXT)";
     private static final String SQL_DELETE_ENTRIES =
-            "DROP TABLE IF EXISTS " + User.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + UserAccount.TABLE_NAME;
 
-    private SharedPreferences sharedPreferences;
-    private SharedPreferences.Editor editor;
+    private static SharedPreferences sharedPreferences;
+    private static SharedPreferences.Editor editor;
 
     public AccountsDatabaseHelper(Context context) {
-        super(context, User.TABLE_NAME, null, DATABASE_VERSION);
+        super(context, UserAccount.TABLE_NAME, null, DATABASE_VERSION);
+        sharedPreferences = context.getSharedPreferences("Preferences", 0);
     }
 
-    public int getId(UserInfo user) {
+    public int getId(User user) {
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put(User.COLUMN_NAME_USERNAME, user.username);
-        cv.put(User.COLUMN_NAME_PASSWORD, user.password);
+        cv.put(UserAccount.COLUMN_NAME_EMAIL, user.getEmail());
+        cv.put(UserAccount.COLUMN_NAME_PASSWORD, user.getPassword());
 
-        Cursor cursor = db.rawQuery("SELECT " + User._ID + " FROM " + User.TABLE_NAME +
-                            " WHERE " + User.COLUMN_NAME_USERNAME + " = '" + user.username +
-                            "' AND " + User.COLUMN_NAME_PASSWORD + " = '" + user.password + "';",
+        Cursor cursor = db.rawQuery("SELECT " + UserAccount._ID + " FROM " + UserAccount.TABLE_NAME +
+                            " WHERE " + UserAccount.COLUMN_NAME_EMAIL + " = '" + user.getEmail() +
+                            "' AND " + UserAccount.COLUMN_NAME_PASSWORD + " = '" + user.getPassword() + "';",
                 null);
 
         if (cursor.moveToFirst()) {
@@ -50,18 +51,17 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean addOne(UserInfo user) {
+    public boolean addOne(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put(User.COLUMN_NAME_EMAIL, user.emailAddress);
-        cv.put(User.COLUMN_NAME_NAME, user.name);
-        cv.put(User.COLUMN_NAME_PHONE, user.phoneNumber);
-        cv.put(User.COLUMN_NAME_USERNAME, user.username);
-        cv.put(User.COLUMN_NAME_PASSWORD, user.password);
-        cv.put(User.COLUMN_NAME_ADDRESS, user.emailAddress);
+        cv.put(UserAccount.COLUMN_NAME_EMAIL, user.getEmail());
+        cv.put(UserAccount.COLUMN_NAME_NAME, user.getName());
+        cv.put(UserAccount.COLUMN_NAME_PHONE, user.getMobile());
+        cv.put(UserAccount.COLUMN_NAME_PASSWORD, user.getPassword());
+        cv.put(UserAccount.COLUMN_NAME_ADDRESS, user.getEmail());
 
-        long insert = db.insert(User.TABLE_NAME, null, cv);
+        long insert = db.insert(UserAccount.TABLE_NAME, null, cv);
         db.close();
 
         // Account was created successfully, save it so that we can log in with it
@@ -69,11 +69,22 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
             int userId = getId(user);
             editor = sharedPreferences.edit();
             editor.putBoolean("LoggedIn", true);
-            editor.putInt(User._ID, userId);
-            editor.putString(User.COLUMN_NAME_USERNAME, user.username);
+            editor.putInt(UserAccount._ID, userId);
+            editor.putString(UserAccount.COLUMN_NAME_EMAIL, user.getEmail());
             editor.commit();
         }
         return (insert != -1);
+    }
+
+    public static void logout() {
+        editor = sharedPreferences.edit();
+        editor.clear();
+        editor.commit();
+    }
+
+    public static String getUser() {
+        String username = sharedPreferences.getString(UserAccount.COLUMN_NAME_EMAIL, "");
+        return username;
     }
 
     @Override

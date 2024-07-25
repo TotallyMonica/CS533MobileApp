@@ -1,16 +1,8 @@
 package com.github.totallymonica.cs533mobileapp.util.localstorage;
 
-import android.content.ContentProvider;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.content.UriMatcher;
-import android.database.Cursor;
-import android.net.Uri;
-import android.util.Log;
-
-import com.github.totallymonica.cs533mobileapp.data.AccountsContentProvider;
-import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseDescription.User;
 
 /**
  * CS533 Mobile App
@@ -67,14 +59,6 @@ public class LocalStorage {
 
     // Function of interest - Gets email/id/mobile/name/password
     public String getUserLogin() {
-        ContentProvider creds = new AccountsContentProvider();
-        Uri queryUri = User.CONTENT_URI;
-        UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
-        try {
-            Cursor cursor = creds.query(queryUri, new String[]{ User.COLUMN_NAME_EMAIL, User._ID, User.COLUMN_NAME_PHONE, User.COLUMN_NAME_NAME, User.COLUMN_NAME_PASSWORD }, "", new String[]{""}, "");
-        } catch (Exception e) {
-            Log.println(0, "", e.toString());
-        }
         String user = sharedPreferences.getString(KEY_USER, "");
         return user;
     }

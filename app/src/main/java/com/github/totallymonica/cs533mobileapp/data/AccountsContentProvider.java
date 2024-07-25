@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 
 import com.github.totallymonica.cs533mobileapp.R;
-import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseDescription.User;
+import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseDescription.UserAccount;
 
 public class AccountsContentProvider extends ContentProvider {
     // Used to access the database
@@ -21,8 +21,8 @@ public class AccountsContentProvider extends ContentProvider {
     private static final int ALL_USERS = 2;
 
     static {
-        uriMatcher.addURI(AccountsDatabaseDescription.AUTHORITY, User.TABLE_NAME + "/#", ONE_USER);
-        uriMatcher.addURI(AccountsDatabaseDescription.AUTHORITY, User.TABLE_NAME + "/#", ALL_USERS);
+        uriMatcher.addURI(AccountsDatabaseDescription.AUTHORITY, UserAccount.TABLE_NAME + "/#", ONE_USER);
+        uriMatcher.addURI(AccountsDatabaseDescription.AUTHORITY, UserAccount.TABLE_NAME + "/#", ALL_USERS);
     }
 
     @Override
@@ -34,11 +34,11 @@ public class AccountsContentProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
-        queryBuilder.setTables(User.TABLE_NAME);
+        queryBuilder.setTables(UserAccount.TABLE_NAME);
 
         switch (uriMatcher.match(uri)) {
             case ONE_USER:
-                queryBuilder.appendWhere(User._ID + "=" + uri.getLastPathSegment());
+                queryBuilder.appendWhere(UserAccount._ID + "=" + uri.getLastPathSegment());
                 break;
             case ALL_USERS:
                 break;
@@ -65,10 +65,10 @@ public class AccountsContentProvider extends ContentProvider {
 
         switch (uriMatcher.match(uri)) {
             case ONE_USER:
-                long rowId = dbHelper.getWritableDatabase().insert(User.TABLE_NAME, null, values);
+                long rowId = dbHelper.getWritableDatabase().insert(UserAccount.TABLE_NAME, null, values);
 
                 if (rowId > 0) { // SQLite IDs begin at 1, anything less than that is invalid
-                    newUserUri = User.buildUserUri(rowId);
+                    newUserUri = UserAccount.buildUserUri(rowId);
                     getContext().getContentResolver().notifyChange(uri, null);
                 }
                 else
@@ -90,7 +90,7 @@ public class AccountsContentProvider extends ContentProvider {
             case ONE_USER:
                 String id = uri.getLastPathSegment();
 
-                deletedRowsCount = dbHelper.getWritableDatabase().delete(User.TABLE_NAME, User._ID + "=" + id, selectionArgs);
+                deletedRowsCount = dbHelper.getWritableDatabase().delete(UserAccount.TABLE_NAME, UserAccount._ID + "=" + id, selectionArgs);
                 break;
             default:
                 throw new UnsupportedOperationException(getContext().getString(R.string.invalid_delete_uri) + uri);
@@ -112,7 +112,7 @@ public class AccountsContentProvider extends ContentProvider {
             case ONE_USER:
                 String id = uri.getLastPathSegment();
 
-                updatedRowsCount = dbHelper.getWritableDatabase().update(User.TABLE_NAME, values, User._ID + "=" + id, selectionArgs);
+                updatedRowsCount = dbHelper.getWritableDatabase().update(UserAccount.TABLE_NAME, values, UserAccount._ID + "=" + id, selectionArgs);
                 break;
             default:
                 throw new UnsupportedOperationException(getContext().getString(R.string.invalid_update_uri) + uri);

@@ -30,6 +30,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseHelper;
 import com.google.gson.Gson;
 import com.github.totallymonica.cs533mobileapp.R;
 import com.github.totallymonica.cs533mobileapp.activity.MainActivity;
@@ -57,6 +58,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
     private static LinearLayout loginLayout;
     private static Animation shakeAnimation;
     private static FragmentManager fragmentManager;
+    private AccountsDatabaseHelper dbHelper;
 
     ProgressDialog progressDialog;
     LocalStorage localStorage;
@@ -78,8 +80,8 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 
     // Initiate Views
     private void initViews() {
+        dbHelper = new AccountsDatabaseHelper(getContext());
         fragmentManager = getActivity().getSupportFragmentManager();
-
         emailid = view.findViewById(R.id.login_emailid);
         password = view.findViewById(R.id.login_password);
         loginButton = view.findViewById(R.id.loginBtn);
@@ -92,7 +94,6 @@ public class Login_Fragment extends Fragment implements OnClickListener {
         localStorage = new LocalStorage(getContext());
         String userString = localStorage.getUserLogin();
         Gson gson = new Gson();
-        userString = localStorage.getUserLogin();
         user = gson.fromJson(userString, User.class);
         Log.d("User", userString);
         // Load ShakeAnimation

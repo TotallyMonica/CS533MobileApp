@@ -8,7 +8,7 @@ public class AccountsDatabaseDescription {
     public static final String AUTHORITY = "com.github.totallymonica.cs533mobileapp.data";
     private static final Uri BASE_CONTENT_URI = Uri.parse("content://" + AUTHORITY);
 
-    public static class User implements BaseColumns {
+    public static class UserAccount implements BaseColumns {
         // Table name
         public static final String TABLE_NAME = "Users";
 
@@ -16,7 +16,6 @@ public class AccountsDatabaseDescription {
         public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon().appendPath(TABLE_NAME).build();
 
         // Column names for the table
-        public static final String COLUMN_NAME_USERNAME = "username";
         public static final String COLUMN_NAME_PASSWORD = "passwd";
         public static final String COLUMN_NAME_NAME = "name";
         public static final String COLUMN_NAME_EMAIL = "email";
