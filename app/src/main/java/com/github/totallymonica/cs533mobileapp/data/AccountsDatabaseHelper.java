@@ -36,6 +36,10 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    private String stageJson(String json) {
+        return json.substring(11, json.length()-1);
+    }
+
     public int getId(User user) {
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues cv = new ContentValues();
@@ -68,7 +72,7 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
         jsonValues.put(UserAccount.COLUMN_NAME_ADDRESS, user.getEmail());
 
         Gson gson = new Gson();
-        String json = gson.toJson(jsonValues);
+        String json = stageJson(gson.toJson(jsonValues));
 
         // queue values to add to DB
         dbValues.put(UserAccount.COLUMN_NAME_EMAIL, user.getEmail());
