@@ -129,6 +129,11 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public boolean isLoggedIn() {
+        boolean loggedIn = sharedPreferences.getBoolean("LoggedIn", false);
+        return loggedIn;
+    }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_ENTRIES);

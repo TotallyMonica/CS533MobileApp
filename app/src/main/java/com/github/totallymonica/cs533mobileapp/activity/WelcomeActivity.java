@@ -15,6 +15,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.github.totallymonica.cs533mobileapp.R;
 import com.github.totallymonica.cs533mobileapp.adapter.ViewPagerAdapter;
+import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseHelper;
 import com.github.totallymonica.cs533mobileapp.util.localstorage.LocalStorage;
 
 import java.util.Timer;
@@ -35,6 +36,7 @@ public class WelcomeActivity extends AppCompatActivity {
     LocalStorage localStorage;
     private int dotscount;
     private ImageView[] dots;
+    AccountsDatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +45,9 @@ public class WelcomeActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        localStorage = new LocalStorage(getApplicationContext());
-        boolean loggedIn = localStorage.isUserLoggedIn();
-        if (localStorage.isUserLoggedIn()) {
+        dbHelper = new AccountsDatabaseHelper(WelcomeActivity.this);
+        boolean loggedIn = dbHelper.isLoggedIn();
+        if (dbHelper.isLoggedIn()) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
 

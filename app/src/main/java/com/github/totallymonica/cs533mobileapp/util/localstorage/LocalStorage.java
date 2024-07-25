@@ -56,15 +56,10 @@ public class LocalStorage {
 //        return user;
 //    }
 
-    public boolean checkLogin() {
-        // Check login status
-        return !this.isUserLoggedIn();
-    }
 
-
-    public boolean isUserLoggedIn() {
-        return sharedPreferences.getBoolean(IS_USER_LOGIN, false);
-    }
+//    public boolean isUserLoggedIn() {
+//    return sharedPreferences.getBoolean(IS_USER_LOGIN, false);
+//    }
 
     public String getUserAddress() {
         boolean hasUserAddress = sharedPreferences.contains(KEY_USER_ADDRESS);
