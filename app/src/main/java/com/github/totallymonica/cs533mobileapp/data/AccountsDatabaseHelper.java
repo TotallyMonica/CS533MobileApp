@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseDescription.UserAccount;
 import com.github.totallymonica.cs533mobileapp.model.User;
+import com.google.gson.Gson;
 
 public class AccountsDatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
@@ -20,7 +21,8 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
                     UserAccount.COLUMN_NAME_NAME + " TEXT," +
                     UserAccount.COLUMN_NAME_EMAIL + " TEXT," +
                     UserAccount.COLUMN_NAME_PHONE + " TEXT," +
-                    UserAccount.COLUMN_NAME_ADDRESS + " TEXT)";
+                    UserAccount.COLUMN_NAME_ADDRESS + " TEXT," +
+                    UserAccount.COLUMN_NAME_JSON + " TEXT)";
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + UserAccount.TABLE_NAME;
 
@@ -29,7 +31,9 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
 
     public AccountsDatabaseHelper(Context context) {
         super(context, UserAccount.TABLE_NAME, null, DATABASE_VERSION);
-        sharedPreferences = context.getSharedPreferences("Preferences", 0);
+        if (sharedPreferences == null) {
+            sharedPreferences = context.getSharedPreferences("Preferences", 0);
+        }
     }
 
     public int getId(User user) {
@@ -55,11 +59,17 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
+        Gson gson = new Gson();
+        String json = gson.toJson(cv);
+
         cv.put(UserAccount.COLUMN_NAME_EMAIL, user.getEmail());
         cv.put(UserAccount.COLUMN_NAME_NAME, user.getName());
         cv.put(UserAccount.COLUMN_NAME_PHONE, user.getMobile());
         cv.put(UserAccount.COLUMN_NAME_PASSWORD, user.getPassword());
         cv.put(UserAccount.COLUMN_NAME_ADDRESS, user.getEmail());
+//        cv.put(UserAccount.COLUMN_NAME_JSON, json);
+
+        System.out.println(json);
 
         long insert = db.insert(UserAccount.TABLE_NAME, null, cv);
         db.close();

@@ -96,18 +96,14 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.signUpBtn:
-
                 // Call checkValidation method
                 checkValidation();
                 break;
-
             case R.id.already_user:
-
                 // Replace login fragment
                 new LoginRegisterActivity().replaceLoginFragment();
                 break;
         }
-
     }
 
     // Check Validation Method
@@ -147,7 +143,6 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
             user = new User(getFullName, getEmailId, getMobileNumber, getPassword);
             AccountsDatabaseHelper dbHelper = new AccountsDatabaseHelper(getContext());
             dbHelper.addOne(user);
-
             progressDialog.setMessage("Registering Data....");
             progressDialog.show();
             Handler mHand = new Handler();

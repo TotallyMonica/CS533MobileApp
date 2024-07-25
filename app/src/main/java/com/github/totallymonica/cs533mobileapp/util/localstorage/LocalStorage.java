@@ -63,13 +63,6 @@ public class LocalStorage {
         return user;
     }
 
-
-    public void logoutUser() {
-        editor = sharedPreferences.edit();
-        editor.clear();
-        editor.commit();
-    }
-
     public boolean checkLogin() {
         // Check login status
         return !this.isUserLoggedIn();
