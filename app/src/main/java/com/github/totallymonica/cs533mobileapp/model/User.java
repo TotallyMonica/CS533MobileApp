@@ -9,17 +9,17 @@ package com.github.totallymonica.cs533mobileapp.model;
 public class User {
     String name;
     String email;
-    String mobile;
-    String password;
+    String phone;
+    String passwd;
 
     public User() {
     }
 
-    public User(String name, String email, String mobile, String password) {
+    public User(String name, String email, String phone, String passwd) {
         this.name = name;
         this.email = email;
-        this.mobile = mobile;
-        this.password = password;
+        this.phone = phone;
+        this.passwd = passwd;
     }
 
     public String getName() {
@@ -39,18 +39,18 @@ public class User {
     }
 
     public String getMobile() {
-        return mobile;
+        return phone;
     }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
+    public void setMobile(String phone) {
+        this.phone = phone;
     }
 
     public String getPassword() {
-        return password;
+        return passwd;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String passwd) {
+        this.passwd = passwd;
     }
 }

@@ -137,6 +137,7 @@ public class MainActivity extends BaseActivity
 
 
         localStorage = new LocalStorage(getApplicationContext());
+        dbHelper = new AccountsDatabaseHelper(MainActivity.this);
         String userString = dbHelper.getUser();
         Gson gson = new Gson();
         user = gson.fromJson(userString, User.class);
