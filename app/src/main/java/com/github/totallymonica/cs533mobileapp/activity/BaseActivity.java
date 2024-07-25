@@ -12,6 +12,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseHelper;
+import com.github.totallymonica.cs533mobileapp.model.User;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.github.totallymonica.cs533mobileapp.interfaces.AddorRemoveCallbacks;
@@ -41,6 +42,7 @@ public class BaseActivity extends AppCompatActivity implements AddorRemoveCallba
     LocalStorage localStorage;
     String userJson;
     ProgressDialog progressDialog;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +51,7 @@ public class BaseActivity extends AppCompatActivity implements AddorRemoveCallba
         gson = new Gson();
         userJson = dbHelper.getUser();
         progressDialog = new ProgressDialog(BaseActivity.this);
-        //user = gson.fromJson(userJson, UserResult.class);
+        user = gson.fromJson(userJson, User.class);
         //  NetworkCheck.isNetworkAvailable(getApplicationContext());
         cartCount();
 
