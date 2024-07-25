@@ -12,7 +12,7 @@ import com.github.totallymonica.cs533mobileapp.model.User;
 import com.google.gson.Gson;
 
 public class AccountsDatabaseHelper extends SQLiteOpenHelper {
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME = "users.db";
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + UserAccount.TABLE_NAME +
