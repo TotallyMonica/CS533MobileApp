@@ -36,7 +36,7 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public int getId(User user) {
+    public long getId(User user) {
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -49,7 +49,7 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
                 null);
 
         if (cursor.moveToFirst()) {
-            return cursor.getInt(0);
+            return cursor.getLong(0);
         } else {
             return -1;
         }
@@ -57,29 +57,38 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
 
     public boolean addOne(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
+        ContentValues jsonValues = new ContentValues();
+        ContentValues dbValues = new ContentValues();
+
+        // queue values to add to JSON
+        jsonValues.put(UserAccount.COLUMN_NAME_EMAIL, user.getEmail());
+        jsonValues.put(UserAccount.COLUMN_NAME_NAME, user.getName());
+        jsonValues.put(UserAccount.COLUMN_NAME_PHONE, user.getMobile());
+        jsonValues.put(UserAccount.COLUMN_NAME_PASSWORD, user.getPassword());
+        jsonValues.put(UserAccount.COLUMN_NAME_ADDRESS, user.getEmail());
 
         Gson gson = new Gson();
-        String json = gson.toJson(cv);
+        String json = gson.toJson(jsonValues);
 
-        cv.put(UserAccount.COLUMN_NAME_EMAIL, user.getEmail());
-        cv.put(UserAccount.COLUMN_NAME_NAME, user.getName());
-        cv.put(UserAccount.COLUMN_NAME_PHONE, user.getMobile());
-        cv.put(UserAccount.COLUMN_NAME_PASSWORD, user.getPassword());
-        cv.put(UserAccount.COLUMN_NAME_ADDRESS, user.getEmail());
-//        cv.put(UserAccount.COLUMN_NAME_JSON, json);
+        // queue values to add to DB
+        dbValues.put(UserAccount.COLUMN_NAME_EMAIL, user.getEmail());
+        dbValues.put(UserAccount.COLUMN_NAME_NAME, user.getName());
+        dbValues.put(UserAccount.COLUMN_NAME_PHONE, user.getMobile());
+        dbValues.put(UserAccount.COLUMN_NAME_PASSWORD, user.getPassword());
+        dbValues.put(UserAccount.COLUMN_NAME_ADDRESS, user.getEmail());
+        dbValues.put(UserAccount.COLUMN_NAME_JSON, json);
 
         System.out.println(json);
 
-        long insert = db.insert(UserAccount.TABLE_NAME, null, cv);
+        long insert = db.insert(UserAccount.TABLE_NAME, null, dbValues);
         db.close();
 
         // Account was created successfully, save it so that we can log in with it
         if (insert != -1) {
-            int userId = getId(user);
+            long userId = getId(user);
             editor = sharedPreferences.edit();
             editor.putBoolean("LoggedIn", true);
-            editor.putInt(UserAccount._ID, userId);
+            editor.putLong(UserAccount._ID, userId);
             editor.putString(UserAccount.COLUMN_NAME_EMAIL, user.getEmail());
             editor.commit();
         }
@@ -92,9 +101,27 @@ public class AccountsDatabaseHelper extends SQLiteOpenHelper {
         editor.commit();
     }
 
-    public static String getUser() {
-        String username = sharedPreferences.getString(UserAccount.COLUMN_NAME_EMAIL, "");
-        return username;
+    public String getUser() {
+        // Get our ID from sharedPreferences
+        long targetId = sharedPreferences.getLong(UserAccount._ID, -1);
+
+        // In the event that we don't have an ID stored, just break out immediately.
+        // Probably should be null but hey compatibility or whatever
+        if (targetId == -1) {
+            return "";
+        }
+
+        // Query DB for the json relevant to our ID
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT " + UserAccount.COLUMN_NAME_JSON + " FROM " + UserAccount.TABLE_NAME +
+                            " WHERE '" + UserAccount._ID + "'='" + targetId + "';", null);
+
+        // Grab the JSON data and return it if we have it
+        if (cursor.moveToFirst()) {
+            return cursor.getString(1);
+        } else {
+            return "";
+        }
     }
 
     @Override

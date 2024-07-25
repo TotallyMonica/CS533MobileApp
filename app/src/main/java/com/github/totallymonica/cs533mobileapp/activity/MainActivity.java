@@ -137,9 +137,8 @@ public class MainActivity extends BaseActivity
 
 
         localStorage = new LocalStorage(getApplicationContext());
-        String userString = localStorage.getUserLogin();
+        String userString = dbHelper.getUser();
         Gson gson = new Gson();
-        userString = localStorage.getUserLogin();
         user = gson.fromJson(userString, User.class);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

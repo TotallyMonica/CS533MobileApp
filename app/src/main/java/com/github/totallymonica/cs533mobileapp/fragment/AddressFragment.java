@@ -17,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.github.totallymonica.cs533mobileapp.data.AccountsDatabaseHelper;
 import com.google.gson.Gson;
 import com.github.totallymonica.cs533mobileapp.R;
 import com.github.totallymonica.cs533mobileapp.model.User;
@@ -55,12 +56,12 @@ public class AddressFragment extends Fragment {
     UserAddress userAddress;
     LocalStorage localStorage;
     Gson gson;
+    AccountsDatabaseHelper dbHelper;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
 
@@ -76,7 +77,8 @@ public class AddressFragment extends Fragment {
 
         localStorage = new LocalStorage(getContext());
         gson = new Gson();
-        userString = localStorage.getUserLogin();
+        dbHelper = new AccountsDatabaseHelper(getContext());
+        userString = dbHelper.getUser();
         User user = gson.fromJson(userString, User.class);
         userAddress = gson.fromJson(localStorage.getUserAddress(), UserAddress.class);
         Log.d("User String : ", userString);

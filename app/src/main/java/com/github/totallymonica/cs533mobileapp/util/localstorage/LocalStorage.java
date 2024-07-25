@@ -50,18 +50,11 @@ public class LocalStorage {
         return instance;
     }
 
-    public void createUserLoginSession(String user) {
-        editor = sharedPreferences.edit();
-        editor.putBoolean(IS_USER_LOGIN, true);
-        editor.putString(KEY_USER, user);
-        editor.commit();
-    }
-
     // Function of interest - Gets email/id/mobile/name/password
-    public String getUserLogin() {
-        String user = sharedPreferences.getString(KEY_USER, "");
-        return user;
-    }
+//    public String getUserLogin() {
+//        String user = sharedPreferences.getString(KEY_USER, "");
+//        return user;
+//    }
 
     public boolean checkLogin() {
         // Check login status

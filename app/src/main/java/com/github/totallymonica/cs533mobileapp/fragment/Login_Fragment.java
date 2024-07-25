@@ -92,7 +92,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
         loginLayout = view.findViewById(R.id.login_layout);
         progressDialog = new ProgressDialog(getContext());
         localStorage = new LocalStorage(getContext());
-        String userString = localStorage.getUserLogin();
+        String userString = dbHelper.getUser();
         Gson gson = new Gson();
         user = gson.fromJson(userString, User.class);
         Log.d("User", userString);
