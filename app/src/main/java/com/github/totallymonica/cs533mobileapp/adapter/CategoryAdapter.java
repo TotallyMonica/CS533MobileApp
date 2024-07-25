@@ -114,13 +114,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
     @Override
     public int getItemCount() {
-        if (Tag.equalsIgnoreCase("Home") && categoryList.size() < 6 && categoryList.size() > 3) {
-            return 3;
-        } else if (Tag.equalsIgnoreCase("Home") && categoryList.size() >= 6) {
-            return 6;
-        } else {
-            return categoryList.size();
-        }
+        return categoryList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
