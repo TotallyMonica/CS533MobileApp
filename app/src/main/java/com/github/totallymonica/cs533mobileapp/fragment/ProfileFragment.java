@@ -10,12 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.github.totallymonica.cs533mobileapp.R;
-/**
- * CS533 Mobile App
- * https://github.com/TotallyMonica/CS533MobileApp
- * Created on 18-Feb-2019.
- * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
- */
+
 /**
  * A simple {@link Fragment} subclass.
  */

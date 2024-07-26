@@ -16,12 +16,7 @@ import com.github.totallymonica.cs533mobileapp.util.localstorage.LocalStorage;
 
 import java.util.List;
 
-/**
- * CS533 Mobile App
- * https://github.com/TotallyMonica/CS533MobileApp
- * Created on 18-Feb-2019.
- * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
- */
+
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder> {
 
     List<Order> orderList;
