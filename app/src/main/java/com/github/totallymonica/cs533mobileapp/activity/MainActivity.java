@@ -177,7 +177,7 @@ public class MainActivity extends BaseActivity
                 fragment = new HomeFragment();
                 break;
             case R.id.nav_profile:
-                fragment = new ProfileFragment();
+                fragment = new ProfileFragment(user);
                 break;
             case R.id.nav_category:
                 fragment = new CategoryFragment();
