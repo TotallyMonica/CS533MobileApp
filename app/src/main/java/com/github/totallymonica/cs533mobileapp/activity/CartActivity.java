@@ -30,12 +30,7 @@ import com.github.totallymonica.cs533mobileapp.util.localstorage.LocalStorage;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * CS533 Mobile App
- * https://github.com/TotallyMonica/CS533MobileApp
- * Created on 18-Feb-2019.
- * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
- */
+
 public class CartActivity extends BaseActivity {
     LocalStorage localStorage;
     List<Cart> cartList = new ArrayList<>();

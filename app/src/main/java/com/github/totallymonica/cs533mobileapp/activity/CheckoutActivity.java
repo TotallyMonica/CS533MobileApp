@@ -17,12 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.github.totallymonica.cs533mobileapp.R;
 import com.github.totallymonica.cs533mobileapp.fragment.AddressFragment;
 
-/**
- * CS533 Mobile App
- * https://github.com/TotallyMonica/CS533MobileApp
- * Created on 18-Feb-2019.
- * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
- */
+
 public class CheckoutActivity extends BaseActivity {
 
     @Override
